@@ -1,0 +1,50 @@
+{
+  "name": "DemoRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "clinic_name": {
+      "type": "string",
+      "description": "Name of the clinic"
+    },
+    "clinic_type": {
+      "type": "string",
+      "description": "Type of clinic"
+    },
+    "num_locations": {
+      "type": "string",
+      "description": "Number of locations"
+    },
+    "challenge": {
+      "type": "string",
+      "description": "Biggest operational challenge (optional)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "demo_booked"
+      ],
+      "default": "new",
+      "description": "Request status"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Optional additional notes or context"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "clinic_name"
+  ]
+}

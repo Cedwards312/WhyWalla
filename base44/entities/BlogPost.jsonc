@@ -1,0 +1,40 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Blog post title"
+    },
+    "category": {
+      "type": "string",
+      "description": "Post category"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Short excerpt/summary"
+    },
+    "body": {
+      "type": "string",
+      "description": "Full post body in rich text/HTML"
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date"
+    },
+    "read_time_minutes": {
+      "type": "number",
+      "description": "Estimated read time in minutes"
+    },
+    "published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the post is publicly visible"
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ]
+}

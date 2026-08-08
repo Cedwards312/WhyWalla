@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 26% 95%;
+    --foreground: 60 4% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 60 4% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 4% 10%;
+    --primary: 168 60% 45%;
+    --primary-foreground: 160 55% 11%;
+    --secondary: 160 55% 11%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 36 26% 95%;
+    --muted-foreground: 152 12% 39%;
+    --accent: 160 55% 11%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 40% 15% / 0.11;
+    --input: 160 40% 15% / 0.11;
+    --ring: 168 60% 45%;
+    --chart-1: 168 60% 45%;
+    --chart-2: 160 55% 11%;
+    --chart-3: 36 26% 95%;
+    --chart-4: 40 100% 41%;
+    --chart-5: 160 75% 25%;
+    --radius: 0.5rem;
+    --font-heading: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Walla custom tokens */
+    --deep: #0D2B22;
+    --mid: #0F6E56;
+    --teal: #1DC6B0;
+    --teal-lt: #D6F5EF;
+    --cream: #F5F3EE;
+    --walla-white: #ffffff;
+    --walla-text: #1a1a18;
+    --walla-muted: #5c6b64;
+    --walla-border: rgba(13,43,34,0.11);
+  }
+
+  .dark {
+    --background: 160 55% 5%;
+    --foreground: 0 0% 98%;
+    --card: 160 55% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 160 55% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 168 60% 45%;
+    --primary-foreground: 160 55% 11%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 168 60% 45%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-[var(--cream)] text-[var(--walla-text)] font-body;
+  }
+}
+
+/* Scrollbar */
+html {
+  scroll-behavior: smooth;
+}
