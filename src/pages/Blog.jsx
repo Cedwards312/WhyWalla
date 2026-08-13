@@ -5,10 +5,11 @@ import HeroSmall from "../components/shared/HeroSmall";
 import { format } from "date-fns";
 
 export default function Blog() {
-  const { data: posts = [], isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["blogPosts"],
     queryFn: () => base44.entities.BlogPost.filter({ published: true }, "-publish_date"),
   });
+  const posts = Array.isArray(data) ? data : [];
 
   return (
     <>
