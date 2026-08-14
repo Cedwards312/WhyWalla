@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: Cedwards312/WhyWalla
+  branch: main
+  base_url: https://www.whywalla.com
+  auth_endpoint: api/auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Publish Date", name: "publish_date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { label: "Read Time (minutes)", name: "read_time_minutes", widget: "number", value_type: "int", default: 5 }
+      - { label: "Published", name: "published", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }

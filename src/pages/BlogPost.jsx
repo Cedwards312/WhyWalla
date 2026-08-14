@@ -1,30 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
-import { base44 } from "@/api/base44Client";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { format } from "date-fns";
 import ReactMarkdown from "react-markdown";
+import { getPostById } from "@/lib/blogPosts";
 
 export default function BlogPostPage() {
-  const urlParams = new URLSearchParams(window.location.search);
   const postId = window.location.pathname.split("/blog/")[1];
-
-  const { data: post, isLoading } = useQuery({
-    queryKey: ["blogPost", postId],
-    queryFn: async () => {
-      const posts = await base44.entities.BlogPost.filter({ id: postId });
-      return posts[0];
-    },
-    enabled: !!postId,
-  });
-
-  if (isLoading) {
-    return (
-      <div className="bg-white min-h-screen flex items-center justify-center">
-        <div className="w-6 h-6 border-2 border-teal/30 border-t-teal rounded-full animate-spin" />
-      </div>
-    );
-  }
+  const post = getPostById(postId);
 
   if (!post) {
     return (
