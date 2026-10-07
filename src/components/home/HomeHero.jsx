@@ -67,7 +67,7 @@ export default function HomeHero() {
       <div className="bg-white/[0.025] border-t border-white/[0.06] px-5 py-4">
         <div className="max-w-[1080px] mx-auto flex items-center gap-6 flex-wrap">
           <span className="text-[0.7rem] text-white/[0.28] tracking-[0.09em] uppercase whitespace-nowrap">
-            Serving
+            Helping 100+ clinics cut costs and complexity
           </span>
           <div className="flex gap-2 flex-wrap">
             {["Medspas", "IV Therapy", "Mobile Wellness", "Concierge Medicine", "Multi-location Clinics"].map((type) => (

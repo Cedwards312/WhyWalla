@@ -5,9 +5,9 @@ import FeatureCard from "../shared/FeatureCard";
 import InsightBox from "../shared/InsightBox";
 
 const pillars = [
-  { icon: <Package className="w-[18px] h-[18px]" />, title: "Supply chain", desc: "Supplies, prescriptions, and office-use Rx consolidated into one order. No vendor juggling, no missed invoices." },
-  { icon: <ClipboardList className="w-[18px] h-[18px]" />, title: "Inventory management", desc: "Track stock levels across every location in real time. Get reorder alerts before you run out — not after." },
-  { icon: <BarChart3 className="w-[18px] h-[18px]" />, title: "Real-time insights", desc: "See spend by category, vendor, and location. Know where your money is going and where you're overpaying." },
+  { icon: <Package className="w-[18px] h-[18px]" />, title: "Order better", desc: "Supplies, prescriptions, and office-use Rx consolidated into one order. No vendor juggling, no missed invoices." },
+  { icon: <ClipboardList className="w-[18px] h-[18px]" />, title: "Stock smarter", desc: "Track stock levels across every location in real time. Get reorder alerts before you run out — not after." },
+  { icon: <BarChart3 className="w-[18px] h-[18px]" />, title: "Spend less", desc: "See spend by category, vendor, and location. Know where your money is going and where you're overpaying." },
 ];
 
 const insightItems = [
