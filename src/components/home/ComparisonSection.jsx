@@ -5,13 +5,13 @@ import SectionHeading from "../shared/SectionHeading";
 import AdvocacyBox from "../shared/AdvocacyBox";
 
 const rows = [
-  { feature: "Supply consolidation", walla: true, portrait: true, infusive: true },
-  { feature: "Inventory management", walla: true, portrait: false, infusive: false },
-  { feature: "Real-time insights", walla: true, portrait: false, infusive: false },
-  { feature: "Prescription procurement", walla: true, portrait: false, infusive: false },
-  { feature: "Office-use Rx management", walla: true, portrait: false, infusive: false },
-  { feature: "Works with existing vendors", walla: true, portrait: false, infusive: true },
-  { feature: "Clinic-first advocacy", walla: true, portrait: false, infusive: false },
+  { feature: "Supply consolidation", walla: true, vendorA: true, vendorB: true },
+  { feature: "Inventory management", walla: true, vendorA: false, vendorB: false },
+  { feature: "Real-time insights", walla: true, vendorA: false, vendorB: false },
+  { feature: "Prescription procurement", walla: true, vendorA: false, vendorB: false },
+  { feature: "Office-use Rx management", walla: true, vendorA: false, vendorB: false },
+  { feature: "Works with existing vendors", walla: true, vendorA: false, vendorB: true },
+  { feature: "Clinic-first advocacy", walla: true, vendorA: false, vendorB: false },
 ];
 
 const Icon = ({ val }) =>
@@ -53,8 +53,8 @@ export default function ComparisonSection() {
                   <tr>
                     <th className="text-[0.79rem] font-medium text-walla-muted px-4 py-3 text-left border-b border-walla-border">Feature</th>
                     <th className="text-[0.84rem] font-display font-bold text-deep px-4 py-3 text-center border-b border-walla-border">Walla</th>
-                    <th className="text-[0.79rem] font-medium text-walla-muted px-4 py-3 text-center border-b border-walla-border">Portrait</th>
-                    <th className="text-[0.79rem] font-medium text-walla-muted px-4 py-3 text-center border-b border-walla-border">Infusive</th>
+                    <th className="text-[0.79rem] font-medium text-walla-muted px-4 py-3 text-center border-b border-walla-border">Vendor A</th>
+                    <th className="text-[0.79rem] font-medium text-walla-muted px-4 py-3 text-center border-b border-walla-border">Vendor B</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -67,10 +67,10 @@ export default function ComparisonSection() {
                         <Icon val={row.walla} />
                       </td>
                       <td className="text-center px-4 py-3 border-b border-walla-border">
-                        <Icon val={row.portrait} />
+                        <Icon val={row.vendorA} />
                       </td>
                       <td className="text-center px-4 py-3 border-b border-walla-border">
-                        <Icon val={row.infusive} />
+                        <Icon val={row.vendorB} />
                       </td>
                     </tr>
                   ))}
