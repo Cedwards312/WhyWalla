@@ -2,5 +2,8 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/assets/*", "*.{png,jpg,jpeg,gif,svg,ico,webp,css,js,json,txt,webmanifest,woff,woff2,mp4}", "/admin", "/admin/*"]
+  },
+  "mimeTypes": {
+    ".mp4": "video/mp4"
   }
 }
