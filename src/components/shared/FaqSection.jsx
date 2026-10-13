@@ -8,7 +8,6 @@ const faqs = {
   onboarding: {
     label: "Getting started",
     items: [
-      { q: "Do I have to switch vendors to use Walla?", a: "No. Walla works with your existing vendor relationships. We connect what you already use into one platform — you don't renegotiate contracts, lose rep relationships, or change how you source. We make ordering simpler, not different." },
       { q: "How long does onboarding take?", a: "Most clinics are fully onboarded within a week. We handle the vendor connection setup on our end — you share your current supplier list and we map everything into the platform. Your team can start ordering through Walla with minimal disruption to daily operations." },
       { q: "Will my staff need to learn a complicated new system?", a: "No. The platform is designed for clinical staff who need things fast and simple — not for supply chain managers. Most users are comfortable placing orders independently within their first week. We also provide onboarding support so no one is figuring it out alone." },
       { q: "Is Walla a good fit for a single-location clinic?", a: "Yes. The time savings and cost reduction are meaningful even at one location — our first clinic saved over 20% on supply costs and recovered 2–3 hours per day. Multi-location clinics get additional value from the consolidated dashboard, but single-location operators see real results from day one." },
