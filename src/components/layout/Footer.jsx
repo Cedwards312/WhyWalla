@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { openCookieSettings } from "@/lib/consent";
 
 export default function Footer() {
   return (
@@ -10,8 +11,12 @@ export default function Footer() {
       <span className="text-[0.74rem] text-white/30 font-light">Walla Health Solutions · wallahealth@wallahealth.com
 
       </span>
-      <span className="text-[0.74rem] text-white/30 font-light">
-        whywalla.com
+      <span className="text-[0.74rem] text-white/30 font-light flex items-center gap-4">
+        <Link to="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+        <button type="button" onClick={openCookieSettings} className="hover:text-white/60 transition-colors">
+          Cookie settings
+        </button>
+        <span>whywalla.com</span>
       </span>
     </footer>);
 

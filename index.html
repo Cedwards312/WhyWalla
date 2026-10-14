@@ -1,14 +1,61 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18510839678"></script>
+    <!-- Google tag (gtag.js) with Consent Mode v2. See src/lib/consent.js and /privacy. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'AW-18510839678');
+      // EU/EEA, UK and Switzerland: opt-in. Nothing is stored until the visitor accepts.
+      gtag('consent', 'default', {
+        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+        region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+        wait_for_update: 500
+      });
+      // Everywhere else: opt-out via the cookie banner.
+      gtag('consent', 'default', {
+        ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted'
+      });
+
+      // Apply a saved choice; treat Global Privacy Control as a decline.
+      (function () {
+        var choice = null;
+        try { choice = localStorage.getItem('walla-consent'); } catch (e) {}
+        if (!choice && navigator.globalPrivacyControl) choice = 'denied';
+        if (choice === 'granted' || choice === 'denied') {
+          gtag('consent', 'update', {
+            ad_storage: choice, ad_user_data: choice, ad_personalization: choice, analytics_storage: choice
+          });
+        }
+      })();
+
+      var GOOGLE_ADS_ID = 'AW-18510839678';
+      var GA4_ID = 'G-SYQQGE37HF';    // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'
+      var CLARITY_ID = 'yxn4zmqbxg';  // Microsoft Clarity project ID
+
+      // Never load trackers on logged-in app pages, which could display protected health information.
+      if (!/^\/(login|register|forgot-password|reset-password|app|admin)(\/|$)/.test(location.pathname)) {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ADS_ID;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', GOOGLE_ADS_ID);
+        if (GA4_ID) gtag('config', GA4_ID);
+
+        if (CLARITY_ID) {
+          (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+            t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+          })(window, document, 'clarity', 'script', CLARITY_ID);
+          // Without a signal, Clarity applies its own regional defaults (cookieless in EU/EEA/UK/CH).
+          var saved = null;
+          try { saved = localStorage.getItem('walla-consent'); } catch (e) {}
+          if (!saved && navigator.globalPrivacyControl) saved = 'denied';
+          if (saved) clarity('consentv2', { ad_Storage: saved, analytics_Storage: saved });
+        }
+      }
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

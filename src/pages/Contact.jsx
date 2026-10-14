@@ -2,6 +2,8 @@ import { useState } from "react";
 import { base44 } from "@/api/base44Client";
 import HeroSmall from "../components/shared/HeroSmall";
 import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { trackEvent } from "@/lib/consent";
 
 const clinicTypes = ["Medspa", "IV Therapy", "Mobile Wellness", "Concierge Medicine", "Multi-service clinic", "Other"];
 const locationOptions = ["1 location", "2–5 locations", "6–15 locations", "16+ locations"];
@@ -19,6 +21,7 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     await base44.entities.DemoRequest.create({ ...form, status: "new" });
+    trackEvent("generate_lead", { clinic_type: form.clinic_type, num_locations: form.num_locations });
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -104,6 +107,10 @@ export default function Contact() {
               </button>
               <p className="text-[0.76rem] text-walla-muted text-center mt-3 font-light">
                 We follow up within one business day. No spam, ever.
+              </p>
+              <p className="text-[0.72rem] text-walla-muted text-center mt-2 font-light">
+                Please don't include patient information. See our{" "}
+                <Link to="/privacy" className="underline underline-offset-2 hover:text-deep">Privacy Policy</Link>.
               </p>
             </form>
           )}

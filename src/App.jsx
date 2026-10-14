@@ -12,6 +12,7 @@ import HowItWorks from './pages/HowItWorks';
 import Blog from './pages/Blog';
 import BlogPostPage from './pages/BlogPost';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogPostPage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
