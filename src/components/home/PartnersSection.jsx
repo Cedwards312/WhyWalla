@@ -14,6 +14,7 @@ const supplies = [
   { name: "TrueCare Biomedix" },
   { name: "Amsino" },
   { name: "ICU Medical" },
+  { name: "Assure IV" },
 ];
 
 const pharmacies = [

@@ -1,42 +1,48 @@
 import { Link } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
+import DashboardPreview from "./DashboardPreview";
 
 export default function HomeHero() {
   return (
     <section className="bg-deep overflow-hidden">
       <div className="px-5 pt-20 sm:pt-24">
         <div className="max-w-[1080px] mx-auto">
-          <div className="inline-flex items-center gap-1.5 bg-teal/[0.12] border border-teal/[0.22] text-teal text-[0.73rem] font-medium tracking-[0.07em] uppercase px-3 py-1 rounded-full mb-6">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            Built for clinic operators. Not vendors.
-          </div>
-          <h1
-            className="font-display font-extrabold text-white leading-[1.05] tracking-tight max-w-[720px] mb-5"
-            style={{ fontSize: "clamp(2.8rem, 5.5vw, 4.2rem)" }}
-          >
-            Order once.<br />
-            Know everything.<br />
-            <span className="text-teal">Grow faster.</span>
-          </h1>
-          <p className="text-[1rem] text-white/[0.58] max-w-[520px] leading-[1.78] font-light mb-4">
-            Walla consolidates your supply chain, automates inventory tracking, and surfaces real-time insights — so your team stops managing vendors and starts focusing on patients.
-          </p>
-          <p className="text-[0.88rem] text-white/[0.42] max-w-[460px] leading-[1.72] font-light mb-10">
-            In 20 minutes you'll know exactly how much Walla saves your clinic — and whether it's worth switching. No pitch, no pressure.
-          </p>
-          <div className="flex gap-3 flex-wrap mb-14">
-            <Link
-              to="/contact"
-              className="bg-teal text-deep font-body text-[0.9rem] font-medium px-7 py-3 rounded-[6px] no-underline hover:opacity-90 transition-opacity"
-            >
-              Book a Free Demo
-            </Link>
-            <Link
-              to="/why-walla"
-              className="bg-transparent text-white/[0.68] font-body text-[0.9rem] px-5 py-3 rounded-[6px] border border-white/[0.17] no-underline hover:text-white hover:border-white/[0.42] transition-all"
-            >
-              Why clinic operators choose Walla
-            </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_460px] gap-12 items-center mb-14">
+            <div>
+              <div className="inline-flex items-center gap-1.5 bg-teal/[0.12] border border-teal/[0.22] text-teal text-[0.73rem] font-medium tracking-[0.07em] uppercase px-3 py-1 rounded-full mb-6">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Built for clinic operators. Not vendors.
+              </div>
+              <h1
+                className="font-display font-extrabold text-white leading-[1.05] tracking-tight max-w-[720px] mb-5"
+                style={{ fontSize: "clamp(2.8rem, 5.5vw, 4.2rem)" }}
+              >
+                Order once.<br />
+                Know everything.<br />
+                <span className="text-teal">Grow faster.</span>
+              </h1>
+              <p className="text-[1rem] text-white/[0.58] max-w-[520px] leading-[1.78] font-light mb-4">
+                Walla consolidates your supply chain, automates inventory tracking, and surfaces real-time insights — so your team stops managing vendors and starts focusing on patients.
+              </p>
+              <p className="text-[0.88rem] text-white/[0.42] max-w-[460px] leading-[1.72] font-light mb-10">
+                In 20 minutes you'll know exactly how much Walla saves your clinic — and whether it's worth switching. No pitch, no pressure.
+              </p>
+              <div className="flex gap-3 flex-wrap">
+                <Link
+                  to="/contact"
+                  className="bg-teal text-deep font-body text-[0.9rem] font-medium px-7 py-3 rounded-[6px] no-underline hover:opacity-90 transition-opacity"
+                >
+                  Book a Free Demo
+                </Link>
+                <Link
+                  to="/why-walla"
+                  className="bg-transparent text-white/[0.68] font-body text-[0.9rem] px-5 py-3 rounded-[6px] border border-white/[0.17] no-underline hover:text-white hover:border-white/[0.42] transition-all"
+                >
+                  Why clinic operators choose Walla
+                </Link>
+              </div>
+            </div>
+            <DashboardPreview />
           </div>
 
           {/* Stats strip */}
