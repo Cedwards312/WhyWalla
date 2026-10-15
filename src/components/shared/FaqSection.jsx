@@ -18,7 +18,7 @@ const faqs = {
     items: [
       { q: "What types of products can I order through Walla?", a: "Medical supplies and consumables (needles, syringes, PPE, IV supplies), prescriptions, and office-use Rx — all through one platform. If your clinic orders it regularly, Walla can handle it." },
       { q: "What happens if a vendor is out of stock on something I need?", a: "Because Walla has relationships with multiple vendors across product categories, we can source alternatives quickly when a primary supplier has a shortage. You get notified immediately and we surface substitute options so patient care isn't disrupted." },
-      { q: "Can I still work directly with my preferred vendor reps?", a: "Absolutely. Walla doesn't replace your vendor relationships — it organizes them. If you have a rep you trust at a specific distributor, that relationship stays intact. Walla just makes the actual ordering process faster and gives you one invoice instead of many." },
+      { q: "What categories of vendors are included?", a: "IV solutions, medications, stem cell therapies, clinical consumables, and 503A and 503B compounding pharmacies. We also evaluate additional vendors and value-added services based on what our clinics ask for." },
     ],
   },
   inventory: {
