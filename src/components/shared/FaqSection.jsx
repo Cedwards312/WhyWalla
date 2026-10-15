@@ -74,7 +74,7 @@ export default function FaqSection() {
   const categories = Object.keys(faqs);
 
   return (
-    <section className="bg-[#F5F3EE] px-5 py-20">
+    <section className="bg-cream px-5 py-20">
       <div className="max-w-[1080px] mx-auto">
         <SectionTag>Common questions</SectionTag>
         <SectionHeading>Everything clinic operators ask before their first demo.</SectionHeading>
