@@ -13,6 +13,7 @@ import Blog from './pages/Blog';
 import BlogPostPage from './pages/BlogPost';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import Supplies from './pages/Supplies';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/blog/:id" element={<BlogPostPage />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/supplies" element={<Supplies />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
