@@ -32,6 +32,7 @@
       var GOOGLE_ADS_ID = 'AW-18510839678';
       var GA4_ID = 'G-SYQQGE37HF';    // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'
       var CLARITY_ID = 'yxn4zmqbxg';  // Microsoft Clarity project ID
+      var META_PIXEL_ID = '930528177112357';
 
       // Never load trackers on logged-in app pages, which could display protected health information.
       if (!/^\/(login|register|forgot-password|reset-password|app|admin)(\/|$)/.test(location.pathname)) {
@@ -54,6 +55,27 @@
           try { saved = localStorage.getItem('walla-consent'); } catch (e) {}
           if (!saved && navigator.globalPrivacyControl) saved = 'denied';
           if (saved) clarity('consentv2', { ad_Storage: saved, analytics_Storage: saved });
+        }
+
+        if (META_PIXEL_ID) {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          // Meta has no regional defaults, so hold the pixel back until consent for visitors
+          // whose time zone is in Europe (approximates the opt-in regions above).
+          var metaChoice = null;
+          try { metaChoice = localStorage.getItem('walla-consent'); } catch (e) {}
+          if (!metaChoice && navigator.globalPrivacyControl) metaChoice = 'denied';
+          var tz = '';
+          try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+          if (metaChoice === 'denied' || (!metaChoice && /^Europe\//.test(tz))) fbq('consent', 'revoke');
+          fbq('init', META_PIXEL_ID);
+          fbq('track', 'PageView'); // later in-app navigations are tracked by the pixel automatically
         }
       }
     </script>

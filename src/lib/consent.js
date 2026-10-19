@@ -25,11 +25,16 @@ export function setConsent(choice) {
     analytics_storage: choice,
   });
   window.clarity?.("consentv2", { ad_Storage: choice, analytics_Storage: choice });
+  window.fbq?.("consent", choice === "granted" ? "grant" : "revoke");
 }
 
-// Records a conversion event in Google Ads / GA4. No personal details are sent.
+// Meta standard events matching our Google event names.
+const META_EVENTS = { generate_lead: "Lead" };
+
+// Records a conversion event in Google Ads / GA4 and Meta. No personal details are sent.
 export function trackEvent(name, params) {
   window.gtag?.("event", name, params);
+  if (META_EVENTS[name]) window.fbq?.("track", META_EVENTS[name], params);
 }
 
 export function openCookieSettings() {

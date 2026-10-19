@@ -33,6 +33,7 @@ const sections = [
     list: [
       "Google Ads — measures conversions from our ads and may be used to show Walla ads to past visitors.",
       "Google Analytics — reports on site traffic and visitor behavior in aggregate.",
+      "Meta Pixel — measures conversions from our Facebook and Instagram ads and may be used to show Walla ads to past visitors.",
       "Microsoft Clarity — records how visitors interact with pages (clicks, scrolling) so we can improve the site. Text entered into form fields is masked.",
     ],
     after: [
