@@ -8,8 +8,10 @@ export default function Footer() {
         <span className="font-display font-extrabold text-[1.2rem] text-teal tracking-tight leading-none">walla!</span>
         <span className="font-body font-semibold text-[0.55rem] text-white/40 tracking-[0.18em] uppercase leading-none mt-0.5">HEALTH</span>
       </Link>
-      <span className="text-[0.74rem] text-white/30 font-light">Walla Health Solutions · wallahealth@wallahealth.com
-
+      <span className="text-[0.74rem] text-white/30 font-light">
+        Walla Health Solutions · wallahealth@wallahealth.com ·{" "}
+        <a href="tel:+18665662996" className="hover:text-white/60 transition-colors">866-566-2996</a> · Local{" "}
+        <a href="tel:+17278536400" className="hover:text-white/60 transition-colors">727-853-6400</a>
       </span>
       <span className="text-[0.74rem] text-white/30 font-light flex items-center gap-4">
         <Link to="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
