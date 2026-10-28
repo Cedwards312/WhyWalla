@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { base44 } from "@/api/base44Client";
 import HeroSmall from "../components/shared/HeroSmall";
 import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/consent";
+
+// Web3Forms access key. Safe to keep in front-end code; it only allows sending to the inbox tied to it.
+const WEB3FORMS_KEY = "0ebe29a3-1c96-411a-b8a7-e30b9cad9fc7";
 
 const clinicTypes = ["Medspa", "IV Therapy", "Mobile Wellness", "Concierge Medicine", "Multi-service clinic", "Other"];
 const locationOptions = ["1 location", "2–5 locations", "6–15 locations", "16+ locations"];
@@ -14,16 +16,36 @@ export default function Contact() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (field) => (e) => setForm({ ...form, [field]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (e.target.botcheck?.checked) return;
     setSubmitting(true);
-    await base44.entities.DemoRequest.create({ ...form, status: "new" });
-    trackEvent("generate_lead", { clinic_type: form.clinic_type, num_locations: form.num_locations });
-    setSubmitting(false);
-    setSubmitted(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Demo request: ${form.clinic_name || form.name}`,
+          from_name: "whywalla.com",
+          replyto: form.email,
+          ...form,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.message || "Send failed");
+      trackEvent("generate_lead", { clinic_type: form.clinic_type, num_locations: form.num_locations });
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong sending your request. Please try again, or email cedwards@wallahealth.com.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -98,6 +120,10 @@ export default function Contact() {
                   value={form.challenge} onChange={handleChange("challenge")}
                 />
               </div>
+              <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
+              {error && (
+                <p role="alert" className="text-[0.85rem] text-red-600 text-center mb-3">{error}</p>
+              )}
               <button
                 type="submit"
                 disabled={submitting}
