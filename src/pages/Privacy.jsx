@@ -1,7 +1,7 @@
 import HeroSmall from "../components/shared/HeroSmall";
 import { openCookieSettings } from "@/lib/consent";
 
-const LAST_UPDATED = "October 14, 2026";
+const LAST_UPDATED = "October 28, 2026";
 const CONTACT_EMAIL = "wallahealth@wallahealth.com";
 
 const sections = [
@@ -15,8 +15,16 @@ const sections = [
   {
     heading: "Information you give us",
     body: [
-      "When you request a demo, we collect your name, email address, clinic name, clinic type, number of locations, and anything you choose to tell us about your operational challenges. We use this only to respond to your request, follow up about Walla, and improve how we talk about our product.",
+      "When you request a demo, we collect your name, email address, phone number if you provide it, clinic name, clinic type, number of locations, anything you choose to tell us about your operational challenges, and whether you opted in to email updates or text messages. We use this only to respond to your request, follow up about Walla, and improve how we talk about our product.",
       "Please do not include patient information in any form on this website.",
+    ],
+  },
+  {
+    id: "text-messages",
+    heading: "Text messages",
+    body: [
+      "We send text messages only to people who check the optional text message box on one of our website forms or booking page, or who text us first about their own request. Consent to receive texts is never required to use our services. Texts relate to your request: replies to your inquiry, demo and appointment reminders, and account or order updates. We do not send marketing texts. Message frequency varies. Message and data rates may apply. Reply STOP to any text to opt out, or HELP for help. You can also email Support@wallahealth.com or call 866-566-2696.",
+      "We do not sell, rent, or share mobile phone numbers or text message opt-in information with third parties or affiliates for their marketing or promotional purposes. Text messaging originator opt-in data and consent are not shared with any third parties, except service providers that deliver our messages on our behalf.",
     ],
   },
   {
@@ -31,10 +39,10 @@ const sections = [
       "We use cookies and similar technologies to measure site traffic and understand how well our advertising performs. We currently use, or may use, the following services:",
     ],
     list: [
-      "Google Ads — measures conversions from our ads and may be used to show Walla ads to past visitors.",
-      "Google Analytics — reports on site traffic and visitor behavior in aggregate.",
-      "Meta Pixel — measures conversions from our Facebook and Instagram ads and may be used to show Walla ads to past visitors.",
-      "Microsoft Clarity — records how visitors interact with pages (clicks, scrolling) so we can improve the site. Text entered into form fields is masked.",
+      "Google Ads: measures conversions from our ads and may be used to show Walla ads to past visitors.",
+      "Google Analytics: reports on site traffic and visitor behavior in aggregate.",
+      "Meta Pixel: measures conversions from our Facebook and Instagram ads and may be used to show Walla ads to past visitors.",
+      "Microsoft Clarity: records how visitors interact with pages (clicks, scrolling) so we can improve the site. Text entered into form fields is masked.",
     ],
     after: [
       "Visitors in the EU/EEA, the UK, and Switzerland are asked for consent before any of these cookies are set. Everywhere else, you can decline at any time. We also treat a Global Privacy Control signal from your browser as a decline.",
@@ -96,7 +104,7 @@ export default function Privacy() {
       <section className="bg-white px-5 py-16">
         <div className="max-w-[720px] mx-auto">
           {sections.map((s) => (
-            <div key={s.heading} className="mb-10">
+            <div key={s.heading} id={s.id} className="mb-10 scroll-mt-24">
               <h2 className="font-display font-bold text-[1.25rem] text-deep mb-3">{s.heading}</h2>
               {s.body.map((p) => (
                 <p key={p} className="text-[0.92rem] text-walla-text font-light leading-[1.8] mb-3">{p}</p>

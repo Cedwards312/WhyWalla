@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="max-w-[1080px] mx-auto flex items-center justify-between px-5 py-4">
         <Link to="/" className="flex flex-col leading-none no-underline">
           <span className="font-display font-extrabold text-[1.45rem] text-teal tracking-tight leading-none">walla!</span>
-          <span className="font-body font-semibold text-[0.6rem] text-white/50 tracking-[0.18em] uppercase leading-none mt-0.5">HEALTH</span>
+          <span className="font-body font-semibold text-[0.6rem] text-teal-lt tracking-[0.18em] uppercase leading-none mt-0.5">HEALTH</span>
         </Link>
 
         {/* Desktop nav */}
@@ -31,7 +31,7 @@ export default function Navbar() {
               className={`text-[0.84rem] font-body px-3 py-2 rounded-[5px] transition-all no-underline ${
                 location.pathname === link.path
                   ? "text-teal"
-                  : "text-white/60 hover:text-white hover:bg-white/[0.07]"
+                  : "text-white/75 hover:text-white hover:bg-white/[0.07]"
               }`}
             >
               {link.label}
@@ -48,6 +48,7 @@ export default function Navbar() {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             className="md:hidden text-white/70 hover:text-white"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

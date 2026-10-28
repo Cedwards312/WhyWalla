@@ -12,7 +12,7 @@ export default function InsightBox({ label, items }) {
           >
             <div className="text-teal text-lg mb-2">{item.icon}</div>
             <div className="text-[0.87rem] font-medium text-white mb-1">{item.title}</div>
-            <div className="text-[0.78rem] text-white/[0.45] leading-[1.6] font-light">
+            <div className="text-[0.78rem] text-white/70 leading-[1.6] font-light">
               {item.description}
             </div>
           </div>

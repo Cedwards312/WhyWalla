@@ -4,7 +4,7 @@ export default function AdvocacyBox({ quote, body, stats }) {
       <div className="font-display text-[1.4rem] font-bold text-white leading-[1.32] tracking-tight mb-3 border-l-[3px] border-teal pl-4">
         "{quote}"
       </div>
-      <div className="text-[0.88rem] text-white/[0.52] leading-[1.78] font-light">
+      <div className="text-[0.88rem] text-white/75 leading-[1.78] font-light">
         {body}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-7">
@@ -16,7 +16,7 @@ export default function AdvocacyBox({ quote, body, stats }) {
             <div className="font-display font-extrabold text-[1.8rem] text-teal leading-none tracking-tight mb-0.5">
               {stat.value}
             </div>
-            <div className="text-[0.77rem] text-white/[0.38] font-light">
+            <div className="text-[0.77rem] text-white/70 font-light">
               {stat.label}
             </div>
           </div>

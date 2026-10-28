@@ -11,7 +11,7 @@ export default function CtaStrip({ headline, subheadline, buttonText = "Book a F
           {headline}
         </h2>
         {subheadline && (
-          <p className="text-[0.97rem] text-white/50 max-w-[480px] mx-auto leading-[1.78] font-light mb-8">
+          <p className="text-[0.97rem] text-white/75 max-w-[480px] mx-auto leading-[1.78] font-light mb-8">
             {subheadline}
           </p>
         )}

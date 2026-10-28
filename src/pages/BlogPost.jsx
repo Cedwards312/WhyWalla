@@ -13,7 +13,7 @@ export default function BlogPostPage() {
       <div className="bg-white min-h-screen px-5 py-20">
         <div className="max-w-[680px] mx-auto text-center">
           <h1 className="font-display font-bold text-2xl text-deep mb-4">Post not found</h1>
-          <Link to="/blog" className="text-teal text-sm hover:underline">← Back to blog</Link>
+          <Link to="/blog" className="text-forest text-sm font-medium hover:underline">← Back to blog</Link>
         </div>
       </div>
     );
@@ -23,7 +23,7 @@ export default function BlogPostPage() {
     <>
       <section className="bg-deep px-5 pt-16 pb-12">
         <div className="max-w-[680px] mx-auto">
-          <Link to="/blog" className="inline-flex items-center gap-1.5 text-white/40 text-[0.8rem] mb-6 no-underline hover:text-white/60 transition-colors">
+          <Link to="/blog" className="inline-flex items-center gap-1.5 text-white/75 text-[0.8rem] mb-6 no-underline hover:text-white transition-colors">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to blog
           </Link>
           <span className="block text-[0.67rem] font-medium text-teal tracking-[0.09em] uppercase mb-4">
@@ -32,7 +32,7 @@ export default function BlogPostPage() {
           <h1 className="font-display font-extrabold text-white leading-[1.1] tracking-tight mb-4" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
             {post.title}
           </h1>
-          <p className="text-[0.88rem] text-white/50 font-light">
+          <p className="text-[0.88rem] text-white/70 font-light">
             {post.publish_date ? format(new Date(post.publish_date), "MMMM d, yyyy") : ""} · {post.read_time_minutes} min read
           </p>
         </div>

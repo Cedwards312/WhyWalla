@@ -54,6 +54,8 @@ module.exports = {
   			mid: 'var(--mid)',
   			teal: 'var(--teal)',
   			'teal-lt': 'var(--teal-lt)',
+  			'teal-dk': 'var(--teal-dk)',
+  			forest: 'var(--forest)',
   			cream: 'var(--cream)',
   			'walla-white': 'var(--walla-white)',
   			'walla-text': 'var(--walla-text)',

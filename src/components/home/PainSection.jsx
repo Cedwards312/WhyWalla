@@ -3,10 +3,10 @@ import SectionTag from "../shared/SectionTag";
 import SectionHeading from "../shared/SectionHeading";
 
 const pains = [
-  { num: "01", title: "Vendor overload", desc: "10+ accounts, 10+ logins, 10+ invoices — for supplies that should come together in one order." },
+  { num: "01", title: "Vendor overload", desc: "10+ accounts, 10+ logins, 10+ invoices, for supplies that should come together in one order." },
   { num: "02", title: "Inventory blind spots", desc: "No real-time view of what you have or need. You find out you're out of something when a patient is already in the chair." },
   { num: "03", title: "Pricing you can't see", desc: "You're paying retail while larger networks quietly get better rates. No one tells you unless you ask." },
-  { num: "04", title: "Hours disappearing", desc: "Clinical staff spending 2–3 hours a day on ordering tasks that add zero value to patient outcomes." },
+  { num: "04", title: "Hours disappearing", desc: "Clinical staff spending 2–3 hours a day on ordering tasks that add nothing to patient outcomes." },
 ];
 
 export default function PainSection() {
@@ -16,7 +16,7 @@ export default function PainSection() {
         <SectionTag>The problem</SectionTag>
         <SectionHeading>Running a clinic shouldn't feel like firefighting.</SectionHeading>
         <p className="text-[0.97rem] text-walla-muted max-w-[500px] leading-[1.78] font-light mb-10">
-          Most wellness clinics are losing thousands every month — not from bad patient care, but from a procurement and inventory system nobody designed for them.
+          Most wellness clinics are losing thousands every month. Not from patient care, but from a procurement and inventory process nobody designed for them.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-walla-border border border-walla-border rounded-xl overflow-hidden mb-10">
           {pains.map((p) => (

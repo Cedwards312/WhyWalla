@@ -35,7 +35,7 @@ export default function Blog() {
                   <div className="text-[0.8rem] text-walla-muted leading-[1.65] font-light">
                     {post.excerpt}
                   </div>
-                  <div className="text-[0.72rem] text-walla-muted/50 mt-3">
+                  <div className="text-[0.72rem] text-walla-muted mt-3">
                     {post.publish_date ? format(new Date(post.publish_date), "MMMM yyyy") : ""} · {post.read_time_minutes} min read
                   </div>
                 </div>

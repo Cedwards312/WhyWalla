@@ -8,7 +8,7 @@ import FeatureCard from "../components/shared/FeatureCard";
 import CtaStrip from "../components/shared/CtaStrip";
 
 // Landing page for paid ad traffic. Intentionally not linked from the
-// navbar or footer — the homepage stays platform-first.
+// navbar or footer. The homepage stays platform-first.
 
 const CTA_TEXT = "See how Walla would work for your clinic";
 
@@ -58,7 +58,7 @@ export default function Supplies() {
             >
               IV and med spa supplies, <span className="text-teal">without the supply closet headaches.</span>
             </h1>
-            <p className="text-[1rem] text-white/[0.58] max-w-[520px] leading-[1.78] font-light mb-10">
+            <p className="text-[1rem] text-white/75 max-w-[520px] leading-[1.78] font-light mb-10">
               Walla puts ordering, inventory, and practice management in one platform, so your team spends less time on supplies and more time with patients.
             </p>
             <Link
@@ -116,7 +116,7 @@ export default function Supplies() {
           <SectionTag>Why it costs less</SectionTag>
           <SectionHeading>Better software, and a better price as proof.</SectionHeading>
           <p className="text-[0.97rem] text-walla-muted max-w-[560px] leading-[1.78] font-light mb-10">
-            And because 100+ clinic locations buy together, you pay <span className="font-medium text-deep">20%+ below wholesale</span>.
+            And because 100+ clinic locations buy together, you can pay <span className="font-medium text-deep">up to 30% less</span> than buying on your own.
           </p>
           <div className="bg-deep rounded-xl p-6 sm:p-10">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -127,7 +127,7 @@ export default function Supplies() {
                     {c.value}
                   </div>
                   <div className="text-[0.87rem] font-medium text-white mb-1.5">{c.label}</div>
-                  <div className="text-[0.78rem] text-white/[0.45] leading-[1.6] font-light">{c.desc}</div>
+                  <div className="text-[0.78rem] text-white/70 leading-[1.6] font-light">{c.desc}</div>
                 </div>
               ))}
             </div>

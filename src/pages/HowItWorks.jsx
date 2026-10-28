@@ -15,9 +15,9 @@ const steps = [
 const capabilities = [
   { icon: <Package className="w-[18px] h-[18px]" />, title: "Supply consolidation", description: "All your vendors, one order, one invoice. Consumables, Rx, and office-use meds in one workflow." },
   { icon: <ClipboardList className="w-[18px] h-[18px]" />, title: "Live inventory tracking", description: "Real-time stock levels across every location. Never find out you're out of something at the wrong moment." },
-  { icon: <Bell className="w-[18px] h-[18px]" />, title: "Predictive reorder alerts", description: "Reorder prompts tied to your booking volume and usage history — before you run low, not after." },
+  { icon: <Bell className="w-[18px] h-[18px]" />, title: "Predictive reorder alerts", description: "Reorder prompts tied to your booking volume and usage history. Before you run low, not after." },
   { icon: <BarChart3 className="w-[18px] h-[18px]" />, title: "Spend visibility", description: "Spend by category, vendor, and location in one dashboard. No manual reporting." },
-  { icon: <DollarSign className="w-[18px] h-[18px]" />, title: "Pricing anomaly detection", description: "Flags when you're paying more than you should — compared to what other clinics pay for the same products." },
+  { icon: <DollarSign className="w-[18px] h-[18px]" />, title: "Pricing anomaly detection", description: "Flags when you're paying more than you should, compared to what other clinics pay for the same products." },
   { icon: <MapPin className="w-[18px] h-[18px]" />, title: "Multi-location dashboard", description: "Manage inventory and ordering across all your locations from one view. No calls, no spreadsheets." },
 ];
 

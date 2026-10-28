@@ -21,11 +21,11 @@ export default function HomeHero() {
                 Know everything.<br />
                 <span className="text-teal">Grow faster.</span>
               </h1>
-              <p className="text-[1rem] text-white/[0.58] max-w-[520px] leading-[1.78] font-light mb-4">
-                Walla consolidates your supply chain, automates inventory tracking, and surfaces real-time insights — so your team stops managing vendors and starts focusing on patients.
+              <p className="text-[1rem] text-white/75 max-w-[520px] leading-[1.78] font-light mb-4">
+                Walla is the practice management platform for wellness clinics. It consolidates your supply chain, automates inventory tracking, and surfaces real-time insights, so your team stops managing vendors and starts focusing on patients.
               </p>
-              <p className="text-[0.88rem] text-white/[0.42] max-w-[460px] leading-[1.72] font-light mb-10">
-                In 20 minutes you'll know exactly how much Walla saves your clinic — and whether it's worth switching. No pitch, no pressure.
+              <p className="text-[0.88rem] text-white/65 max-w-[460px] leading-[1.72] font-light mb-10">
+                In 20 minutes, you'll know exactly how much Walla could save your clinic and whether it's worth switching. No pitch, no pressure.
               </p>
               <div className="flex gap-3 flex-wrap">
                 <Link
@@ -36,7 +36,7 @@ export default function HomeHero() {
                 </Link>
                 <Link
                   to="/why-walla"
-                  className="bg-transparent text-white/[0.68] font-body text-[0.9rem] px-5 py-3 rounded-[6px] border border-white/[0.17] no-underline hover:text-white hover:border-white/[0.42] transition-all"
+                  className="bg-transparent text-white/80 font-body text-[0.9rem] px-5 py-3 rounded-[6px] border border-white/[0.17] no-underline hover:text-white hover:border-white/[0.42] transition-all"
                 >
                   Why clinic operators choose Walla
                 </Link>
@@ -48,9 +48,9 @@ export default function HomeHero() {
           {/* Stats strip */}
           <div className="grid grid-cols-1 sm:grid-cols-4 border-t border-white/[0.07]">
             {[
-              { value: "20%+", label: "Average cost reduction" },
+              { value: "Up to 30%", label: "Cost reduction on supplies and Rx" },
               { value: "6–8 hrs", label: "Recovered per week, per location" },
-              { value: "1", label: "Platform: supplies + Rx + inventory" },
+              { value: "1", label: "Platform for supplies, Rx, and inventory" },
               { value: "Real-time", label: "Inventory visibility across locations" },
             ].map((stat, i) => (
               <div
@@ -60,7 +60,7 @@ export default function HomeHero() {
                 <div className="font-display font-extrabold text-[2.2rem] text-teal leading-none tracking-tight mb-1">
                   {stat.value}
                 </div>
-                <div className="text-[0.78rem] text-white/[0.38] font-light">
+                <div className="text-[0.78rem] text-white/70 font-light">
                   {stat.label}
                 </div>
               </div>
@@ -72,14 +72,14 @@ export default function HomeHero() {
       {/* Clinic types bar */}
       <div className="bg-white/[0.025] border-t border-white/[0.06] px-5 py-4">
         <div className="max-w-[1080px] mx-auto flex items-center gap-6 flex-wrap">
-          <span className="text-[0.7rem] text-white/[0.28] tracking-[0.09em] uppercase whitespace-nowrap">
+          <span className="text-[0.7rem] text-white/60 tracking-[0.09em] uppercase whitespace-nowrap">
             Helping 100+ clinics cut costs and complexity
           </span>
           <div className="flex gap-2 flex-wrap">
             {["Medspas", "IV Therapy", "Mobile Wellness", "Concierge Medicine", "Multi-location Clinics"].map((type) => (
               <span
                 key={type}
-                className="bg-white/[0.045] border border-white/[0.07] text-white/[0.35] text-[0.73rem] px-3 py-1 rounded"
+                className="bg-white/[0.045] border border-white/[0.07] text-white/75 text-[0.73rem] px-3 py-1 rounded"
               >
                 {type}
               </span>

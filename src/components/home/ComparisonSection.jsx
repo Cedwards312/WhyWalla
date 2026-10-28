@@ -16,9 +16,9 @@ const rows = [
 
 const Icon = ({ val }) =>
   val ? (
-    <Check className="w-4 h-4 text-teal mx-auto" />
+    <Check className="w-4 h-4 text-forest mx-auto" aria-label="Included" />
   ) : (
-    <Minus className="w-4 h-4 text-gray-300 mx-auto" />
+    <Minus className="w-4 h-4 text-walla-muted/50 mx-auto" aria-label="Not included" />
   );
 
 export default function ComparisonSection() {
@@ -26,24 +26,24 @@ export default function ComparisonSection() {
     <section className="bg-white px-5 py-20">
       <div className="max-w-[1080px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          {/* Left — Advocacy */}
+          {/* Left: Advocacy */}
           <div>
             <SectionTag>The Walla difference</SectionTag>
             <SectionHeading>Your advocate. Not another vendor.</SectionHeading>
             <div className="mt-6">
               <AdvocacyBox
                 quote="We negotiated 503B pharmacy pricing for a clinic before they were even a customer."
-                body="Walla earned nothing from that call. The clinic saved thousands. This is what being an advocate actually looks like — not a tagline on a website."
+                body="Walla earned nothing from that call. The clinic saved thousands. That's what being an advocate actually looks like. Not a tagline on a website."
                 stats={[
                   { value: "20%+", label: "Cost savings, first clinic" },
                   { value: "2–3 hrs", label: "Daily time recovered" },
-                  { value: "3–4×", label: "Wallet share post-adoption" },
+                  { value: "3–4×", label: "More of the clinic's ordering on Walla after adoption" },
                 ]}
               />
             </div>
           </div>
 
-          {/* Right — Comparison */}
+          {/* Right: Comparison */}
           <div>
             <SectionTag>How we compare</SectionTag>
             <SectionHeading>What Walla covers that others don't.</SectionHeading>

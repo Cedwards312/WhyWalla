@@ -7,7 +7,7 @@ import SectionHeading from "../shared/SectionHeading";
 const capabilities = [
   {
     title: "Predictive ordering",
-    desc: "Walla AI learns your usage and booking volume, then tells you what to reorder and when — before you run out, not after.",
+    desc: "Walla AI learns your usage and booking volume, then tells you what to reorder and when. Before you run out, not after.",
     panel: {
       label: "Suggested reorders",
       rows: [
@@ -58,7 +58,7 @@ function Panel({ panel }) {
             >
               <div>
                 <div className="text-[0.87rem] font-medium text-white">{row.name}</div>
-                <div className="text-[0.75rem] text-white/[0.45] font-light">{row.note}</div>
+                <div className="text-[0.75rem] text-white/65 font-light">{row.note}</div>
               </div>
               <span className="shrink-0 bg-teal/[0.12] border border-teal/[0.22] text-teal text-[0.72rem] font-medium px-2.5 py-1 rounded">
                 {row.action}
@@ -73,7 +73,7 @@ function Panel({ panel }) {
             <div key={bar.name}>
               <div className="flex justify-between text-[0.8rem] mb-1.5">
                 <span className="text-white font-medium">{bar.name}</span>
-                <span className={bar.level < 30 ? "text-teal" : "text-white/[0.45]"}>
+                <span className={bar.level < 30 ? "text-teal" : "text-white/70"}>
                   {bar.level < 30 ? "Reorder suggested" : `${bar.level}% stocked`}
                 </span>
               </div>
@@ -112,8 +112,8 @@ export default function AiSection() {
                   }`}
                 >
                   <span
-                    className={`font-mono tracking-wide block transition-colors ${
-                      isActive ? "text-deep" : "text-walla-muted/60 hover:text-walla-muted"
+                    className={`font-display font-semibold tracking-tight block transition-colors ${
+                      isActive ? "text-deep" : "text-walla-muted hover:text-deep"
                     }`}
                     style={{ fontSize: "clamp(1.25rem, 2.2vw, 1.6rem)" }}
                   >

@@ -13,7 +13,7 @@ export default function HeroSmall({ pill, headline, subheadline }) {
           dangerouslySetInnerHTML={{ __html: headline }}
         />
         {subheadline && (
-          <p className="text-[1rem] text-white/[0.58] max-w-[520px] leading-[1.78] font-light">
+          <p className="text-[1rem] text-white/75 max-w-[520px] leading-[1.78] font-light">
             {subheadline}
           </p>
         )}
